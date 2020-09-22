@@ -104,19 +104,19 @@ class Car:
         self.is_police = False
 
     def go(self):
-        return print(f'{self.name} is going')
+        return f'{self.name} is going'
 
     def stop(self):
-        return print(f'{self.name} is stopped')
+        return f'{self.name} is stopped'
 
     def turnleft(self):
-        return print(f'{self.name} turn left')
+        return f'{self.name} turn left'
 
     def turnright(self):
-        return print(f'{self.name} turn right')
+        return f'{self.name} turn right'
 
     def showspeed(self):
-        return print(f'{self.name} moves with speed {self.speed} km/h')
+        return f'{self.name} moves with speed {self.speed} km/h'
 
 class TownCar(Car):
     def __init__(self, speed, color, name, is_police):
@@ -124,8 +124,8 @@ class TownCar(Car):
 
     def showspeed(self):
         if self.speed > 60:
-            return print(f'Speed of {self.name} exceeded the speed limit for town car')
-        return print(f'Speed of {self.name} is normal')
+            return f'Speed of {self.name} exceeded the speed limit for town car'
+        return f'Speed of {self.name} is normal'
 
 class SportCar(Car):
     def __init__(self, speed, color, name, is_police):
@@ -138,7 +138,7 @@ class WorkCar(Car):
     def showspeed(self):
         if self.speed > 40:
             return f'Speed of {self.name} exceeded the speed limit for work car'
-        return print(f'Speed of {self.name} is normal')
+        return f'Speed of {self.name} is normal'
 
 class PoliceCar(Car):
     def __init__(self, speed, color, name, is_police):
@@ -146,34 +146,34 @@ class PoliceCar(Car):
 
     def police(self):
         if self.is_police:
-            return print(f'{self.name} is policeman')
-        return print(f'{self.name} is not policeman')
+            return f'{self.name} is policeman'
+        return f'{self.name} is not policeman'
 
 ferrary = SportCar(150, 'Red', 'Ferrary', False)
-toyota = TownCar (100, 'White', 'TOYOTA', False)
-nisan = WorkCar (35, "black", 'NISAN', False)
-oka = PoliceCar (10, "Rga", 'OKA', True)
+toyota = TownCar(100, 'White', 'TOYOTA', False)
+nisan = WorkCar(35, "black", 'NISAN', False)
+oka = PoliceCar(10, "Rga", 'OKA', True)
 
 print(f'Speed {toyota.color} {toyota.name} is {toyota.speed}')
-toyota.showspeed()
+print(toyota.showspeed())
 print(f'{toyota.name} is police? {toyota.is_police}')
 
 print(f'Speed {ferrary.color} {ferrary.name} is {ferrary.speed}')
-ferrary.showspeed()
+print(ferrary.showspeed())
 print(f'{ferrary.name} is police? {ferrary.is_police}')
 
 print(f'Speed {nisan.color} {nisan.name} is {nisan.speed}')
-nisan.showspeed()
+print(nisan.showspeed())
 print(f'{nisan.name} is police? {nisan.is_police}')
 
 print(f'Speed {oka.color} {oka.name} is {oka.speed}')
-oka.showspeed()
+print(oka.showspeed())
 print(f'{oka.name} is police? {oka.is_police}')
 
-ferrary.go()
-toyota.stop()
-nisan.turnleft()
-oka.turnright()
+print(ferrary.go())
+print(toyota.stop())
+print(nisan.turnleft())
+print(oka.turnright())
 
 """"
 5. Реализовать класс Stationery (канцелярская принадлежность).
@@ -194,29 +194,29 @@ class Stationery:
         self.title = title
 
     def draw(self):
-        return print('Запуск отрисовки')
+        return 'Запуск отрисовки'
 
 class Pen(Stationery):
     def __init__(self, title):
         super().__init__(title)
 
     def draw(self):
-        return print(f'Рисуем ручкой. {self.title}')
+        return f'Рисуем ручкой. {self.title}'
 
 class Pencil(Stationery):
 
     def draw(self):
-        return print(f'Рисуем карандашем. {self.title}')
+        return f'Рисуем карандашем. {self.title}'
 
 class Handle(Stationery):
 
     def draw(self):
-        return print(f'Рисуем маркером. {self.title}')
+        return f'Рисуем маркером. {self.title}'
 
 
 a = Pen("Ручка")
 b = Pencil("Карандаш")
 c = Handle("Маркер")
-a.draw()
-b.draw()
-c.draw()
+print(a.draw())
+print(b.draw())
+print(c.draw())
